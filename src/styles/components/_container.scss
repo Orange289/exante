@@ -1,0 +1,13 @@
+.container {
+	padding: 10px 20px;
+
+	@media (min-width: $screen-sm-min) {
+		padding-left: 80px;
+		padding-right: 80px;
+	}
+
+	@media (min-width: $screen-md-min) {
+		padding-left: 150px;
+		padding-right: 150px;
+	}
+}

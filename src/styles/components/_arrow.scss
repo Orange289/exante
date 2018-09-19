@@ -1,0 +1,42 @@
+.arrow {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 30px;
+	margin: auto;
+	text-align: center;
+
+	&--desktop {
+		display: none;
+		@include size(68px);
+		border: 2px solid $brand_secondary;
+		border-radius: 100%;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 18px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			@include size(20px);
+			border-bottom: 2px solid $brand_primary;
+			border-right: 2px solid $brand_primary;
+			transform: rotate(45deg);
+
+		}
+	}
+
+	@media (min-width: $screen-sm-min) {
+		bottom: 25px;
+
+		&--desktop {
+			display: block;
+		}
+
+		&--mobile {
+			display: none;
+		}
+	}
+}

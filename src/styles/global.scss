@@ -1,6 +1,10 @@
 // fonts
 
-// @include font-setup($font-fam, $font-local, $font-regular-url1, $font-regular-url2, $font-regular-weight);
+@include font-setup($font-fam, $font-local, $font-regular-url1, $font-regular-url2, $font-regular-weight);
+
+@include font-setup($font-fam-light, $font-local, $font-light-url1, $font-light-url2, $font-light-weight);
+
+@include font-setup($font-fam-semibold, $font-local, $font-semibold-url1, $font-semibold-url2, $font-semibold-weight);
 
 // global styles
 
@@ -11,7 +15,7 @@ html {
 }
 
 body {
-	// font-family: $font-fam, Arial, sans-serif;
+	font-family: $font-fam, Arial, sans-serif;
 	font-size: $font-size-base;
 	background-color: #fff;
 	color: $text-color;
@@ -298,3 +302,6 @@ small,
 	display: none !important;
 }
 
+main {
+  overflow-x: hidden;
+}

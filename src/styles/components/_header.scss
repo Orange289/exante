@@ -1,0 +1,159 @@
+.header {
+  width: 300px;
+  min-width: 300px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+	bottom: 0;
+  left: -300px;
+	margin: 0;
+	padding: 14px 28px;
+  transition: left 0.3s;
+  background: $brand-primary;
+	z-index: 2000;
+
+	@media (min-width: $screen-sm-min) {
+	  padding: 40px 48px;
+	}
+
+	@media (max-width: $screen-xs-min - 1) {
+		width: 100%;
+		left: -320px;
+	}
+}
+
+.header__logo {
+	display: block;
+	margin-bottom: 28px;
+
+	img {
+		height: 32px;
+	}
+
+	@media (min-width: $screen-sm-min) {
+		margin-bottom: 48px;
+	}
+}
+
+.header__menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.header__link {
+	font-size: $font-size-menu;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	display: block;
+	padding-bottom: 30px;
+}
+
+.header__toggle {
+  position: absolute;
+  left: 320px;
+  top: 20px;
+	@include size(20px);
+  cursor: pointer;
+	z-index: 2001;
+
+	span {
+		position: relative;
+		display: block;
+		@include size(20px, 2px);
+		background: $brand-primary;
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			background: $brand-primary;
+			height: 2px;
+		}
+
+		&:before {
+			top: 7px;
+			left: 10px;
+			width: 10px;
+		}
+
+		&:after {
+			top: 14px;
+			left: 0;
+			width: 20px;
+		}
+	}
+
+	@media (min-width: $screen-sm-min) {
+		top: 46px;
+		left: 350px;
+	}
+
+	@media (max-width: $screen-xs-min - 1) {
+		left: 340px;
+	}
+
+}
+
+#toggle {
+  position: absolute;
+  display: none;
+}
+
+#toggle:checked ~ .header > .header__toggle {
+  left: auto;
+	right: 15px;
+
+	span,
+	span:before,
+	span:after {
+		background: #fff;
+	}
+
+	@media (min-width: $screen-sm-min) {
+		right: 35px;
+	}
+}
+
+#toggle:checked ~ .header {
+	left: 0;
+
+	.header__link.is-active {
+		color: $brand-secondary;
+		position: relative;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: -36px;
+			background: $brand-secondary;
+			@include size(16px);
+			border-radius: 100%;
+			border: 3px solid #fff;
+		}
+	}
+
+	@media (max-width: $screen-xs-min - 1) {
+		.header__link.is-active:after {
+			display: none;
+		}
+	}
+
+	@media (min-width: $screen-sm-min) {
+		.header__link.is-active:after {
+			right: -56px;
+		}
+	}
+
+}
+
+.content {
+	transform: translateX(0);
+	transition: transform .3s;
+}
+
+#toggle:checked ~ main > .content {
+	transform: translateX(300px);
+}

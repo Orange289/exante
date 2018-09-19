@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Project</title>
+		<title>EXANTE Test</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -9,9 +9,14 @@
 		<link rel="stylesheet" media="all" href="css/style.css" />
 	</head>
 	<body>
-		<!-- Include your partials here! for example: @@include('./partials/header.html') -->
+		@@include('./partials/header.html')
 		<main class="main">
+			<div class="content">
+				@@include('./partials/home.html')
+				@@include('./partials/page.html')
+			</div>
 		</main>
+		@@include('./partials/sprite.svg')
 		<script src="js/main.js"></script>
 	</body>
 </html>
